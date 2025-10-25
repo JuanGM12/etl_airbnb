@@ -49,6 +49,38 @@ class Transformacion:
         for nombre, df in datos.items():
             print(f"  {nombre}: {len(df):,} registros, {len(df.columns)} columnas")
     
+    def cargar_datos_desde_csv(self) -> Dict[str, pd.DataFrame]:
+        """
+        Carga los datos desde archivos CSV comprimidos.
+        
+        Returns:
+            Dict[str, pd.DataFrame]: Diccionario con DataFrames de cada colección
+        """
+        import os
+        
+        archivos_csv = {
+            'listings': 'data/listings.csv.gz',
+            'reviews': 'data/reviews.csv.gz',
+            'calendar': 'data/calendar.csv.gz'
+        }
+        
+        datos = {}
+        
+        for nombre, archivo in archivos_csv.items():
+            if os.path.exists(archivo):
+                self.logs.info(f"Cargando {nombre} desde {archivo}")
+                print(f"Cargando {nombre}...")
+                datos[nombre] = pd.read_csv(archivo, compression='gzip', low_memory=False)
+                print(f"  {nombre}: {len(datos[nombre]):,} registros cargados")
+            else:
+                self.logs.warning(f"Archivo no encontrado: {archivo}")
+                print(f"⚠️ Archivo no encontrado: {archivo}")
+        
+        # Cargar datos para transformación
+        self.cargar_datos_para_transformacion(datos)
+        
+        return datos
+    
     def limpiar_valores_nulos_y_duplicados(self, df: pd.DataFrame, nombre_coleccion: str) -> pd.DataFrame:
         """
         Limpia valores nulos y duplicados del DataFrame.

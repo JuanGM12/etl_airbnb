@@ -64,9 +64,10 @@ def run_transformation():
         
         transformador = Transformacion()
         datos = transformador.cargar_datos_desde_csv()
-        transformador.ejecutar_transformacion_completa(datos)
+        datos_transformados = transformador.ejecutar_transformacion_completa()
+        transformador.guardar_datos_transformados()
         
-        print("Transformación completada")
+        print("\nTransformación completada")
         print("   Archivos en: datos_transformados/")
         return True
     except Exception as e:
@@ -98,7 +99,27 @@ def run_load():
             user='root', password=''
         )
         
-        datos_transformados = cargador.cargar_datos_transformados_desde_csv()
+        # Cargar datos transformados desde CSV
+        import pandas as pd
+        
+        datos_transformados = {}
+        archivos_csv = {
+            'listings': 'datos_transformados/listings_transformado.csv',
+            'reviews': 'datos_transformados/reviews_transformado.csv',
+            'calendar': 'datos_transformados/calendar_transformado.csv'
+        }
+        
+        print("Cargando datos transformados...")
+        for nombre, archivo in archivos_csv.items():
+            if os.path.exists(archivo):
+                print(f"  Cargando {nombre}...")
+                datos_transformados[nombre] = pd.read_csv(archivo, low_memory=False)
+                print(f"  {nombre}: {len(datos_transformados[nombre]):,} registros")
+        
+        # Preparar datos para carga
+        cargador.cargar_datos_transformados(datos_transformados)
+        
+        # Ejecutar carga
         reporte = cargador.ejecutar_carga_completa(datos_transformados)
         
         print("Carga completada")
