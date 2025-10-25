@@ -124,27 +124,21 @@ Luego selecciona:
 
 ### Equipo de Desarrollo
 
-**Integrante 1**: [Nombre]
+**Integrante 1**: Juan Diego Patiño Osorio
 - **Responsabilidades**: 
   - Extracción de datos (extraccion.py)
   - Configuración del sistema de logging
   
-**Integrante 2**: [Nombre]
+**Integrante 2**: José Ricardo Quirós García
 - **Responsabilidades**:
-  - Análisis exploratorio de datos (exploracion_airbnb.ipynb)
+  - Análisis exploratorio de datos y transformación. (exploracion_airbnb.ipynb)
   - Identificación de problemas de calidad de datos
 
-**Integrante 3**: [Nombre]
+**Integrante 3**: Mariana Villegas Ochoa
 - **Responsabilidades**:
-  - Transformación y limpieza de datos (transformacion.py)
-  - Manejo de tipos no hasheables y datos anidados
+  -  Limpieza de datos y carga de datos (transformacion.py y carga.py)
 
-**Integrante 4**: [Nombre]
-- **Responsabilidades**:
-  - Carga de datos en MySQL (carga.py)
-  - Optimización de inserción de datos masivos
-
-## 📊 Ejemplo de Ejecución del ETL
+## Ejemplo de Ejecución del ETL
 
 ### Ejemplo Completo: Pipeline ETL de Airbnb
 
