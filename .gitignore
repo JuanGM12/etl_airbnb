@@ -1,0 +1,5 @@
+data/*.csv.gz
+data/*.csv
+
+# Mantener la estructura de la carpeta pero no los archivos
+!data/.gitkeep
