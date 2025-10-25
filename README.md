@@ -131,12 +131,14 @@ Luego selecciona:
   
 **Integrante 2**: José Ricardo Quirós García
 - **Responsabilidades**:
-  - Análisis exploratorio de datos y transformación. (exploracion_airbnb.ipynb)
+  - Análisis exploratorio de datos y transformación. (exploracion_airbnb.ipynb y transformacion.py)
   - Identificación de problemas de calidad de datos
 
 **Integrante 3**: Mariana Villegas Ochoa
 - **Responsabilidades**:
   -  Limpieza de datos y carga de datos (transformacion.py y carga.py)
+
+  **El proyecto se trabajó simultáneamente.**
 
 ## Ejemplo de Ejecución del ETL
 
