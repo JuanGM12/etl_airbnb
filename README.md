@@ -120,9 +120,7 @@ Luego selecciona:
 
 ---
 
-## 👥 Integrantes del Grupo y Responsabilidades
-
-### Equipo de Desarrollo
+## Integrantes del Grupo y Responsabilidades
 
 **Integrante 1**: Juan Diego Patiño Osorio
 - **Responsabilidades**: 
